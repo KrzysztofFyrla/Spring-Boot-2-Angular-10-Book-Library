@@ -1,0 +1,24 @@
+<section>
+  <button color="primary" mat-fab (click)="addLibrary()" style="margin-right: 10px"
+          matTooltip="Dodaj książkę">
+    <mat-icon>library_add</mat-icon>
+  </button>
+  <button mat-fab (click)="settingsLibrary()" matTooltip="Ustawienia"
+          style="margin-right: 10px">
+    <mat-icon>settings</mat-icon>
+  </button>
+  <button mat-fab routerLink=".." matTooltip="Zmień widok"
+          style="margin-right: 10px">
+    <mat-icon>view_list</mat-icon>
+  </button>
+</section>
+
+<section>
+  <ul>
+    <li *ngFor="let book of books">
+      <a (click)="editBook(book.id)">
+        <img [src]="book.retrievedImage">
+      </a>
+    </li>
+  </ul>
+</section>

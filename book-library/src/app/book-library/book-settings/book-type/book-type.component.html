@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-card-title>Gatunki</mat-card-title>
+
+  <section>
+    <button color="primary" mat-fab (click)="openTypeDialog()" style="margin-bottom: 10px"
+            matTooltip="Dodaj gatunek">
+      <mat-icon>library_add</mat-icon>
+    </button>
+  </section>
+
+  <div class="mytable example-container mat-elevation-z8">
+    <mat-table [dataSource]="dataSource" matSort>
+
+      <ng-container matColumnDef="id">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Nr.</mat-header-cell>
+        <mat-cell *matCellDef="let i = index" data-label="Nr."> {{i + 1}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Tytuł</mat-header-cell>
+        <mat-cell *matCellDef="let element" data-label="Nazwa"> {{element.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef mat-sort-header></mat-header-cell>
+        <mat-cell *matCellDef="let element">
+          <button (click)="deleteType(element.id)" class='btn btn-danger' mat-mini-fab>
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-cell>
+      </ng-container>
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+  </div>
+</mat-card>

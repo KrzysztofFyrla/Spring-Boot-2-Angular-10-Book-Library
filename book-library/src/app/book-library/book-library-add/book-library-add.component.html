@@ -1,0 +1,79 @@
+<div class="example-button-container">
+  <a mat-fab color="primary" routerLink="..">
+    <mat-icon>reply</mat-icon>
+  </a>
+</div>
+
+<div class="matero-col">
+  <mat-card>
+    <mat-card-title>Dodaj książkę</mat-card-title>
+
+    <form (ngSubmit)="onSubmit()" class="form-field-full">
+      <div fxLayout="row wrap" fxLayoutGap="8px grid">
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field>
+            <input matInput placeholder="Tytuł" [(ngModel)]="books.title" name="titles">
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field>
+            <input matInput placeholder="Opis" [(ngModel)]="books.description" name="descriptions">
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field>
+            <mat-label>Gatunek</mat-label>
+            <mat-select name="employeeRole" [(ngModel)]="books.typeId">
+              <mat-option *ngFor="let role of bookType" [value]="role">{{role.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field>
+            <mat-label>Autor</mat-label>
+            <mat-select name="employeeRole" [(ngModel)]="books.authorId">
+              <mat-option *ngFor="let role of bookAuthor" [value]="role">{{role.surname}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field>
+            <mat-label>Ocena</mat-label>
+            <mat-select name="employeeRole" [(ngModel)]="books.ratingId">
+              <mat-option *ngFor="let role of bookRating" [value]="role">{{role.rating}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Wybierz datę"
+                   [(ngModel)]="books.date" name="date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <button mat-raised-button color="primary" type="button" (click)="fileInput.click()">
+            <span>Prześlij zdjęcie</span>
+            <input #fileInput type="file" (change)="onFileChanged($event)" style="display:none;"/>
+          </button>
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <img [src]="imgURL" height="200" width="200" *ngIf="imgURL">
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn btn-success" style="margin-top: 10px">Zapisz</button>
+
+    </form>
+  </mat-card>
+</div>

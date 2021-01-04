@@ -1,0 +1,93 @@
+<div class="example-button-container">
+  <a mat-fab color="primary" routerLink="/books">
+    <mat-icon>reply</mat-icon>
+  </a>
+</div>
+
+<div class="matero-col">
+  <mat-card>
+    <mat-card-title>Dane książki</mat-card-title>
+
+    <form (ngSubmit)="onSubmit()" class="form-field-full">
+      <div fxLayout="row wrap" fxLayoutGap="8px grid">
+
+        <div fxFlex="100" fxFlex.lt-sm="100">
+          <img [src]="'data:image/jpeg;base64,' + book.image" height="200" width="200">
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field>
+            <input matInput placeholder="Tytuł" [(ngModel)]="book.title" name="titles">
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field>
+            <input matInput placeholder="Opis" [(ngModel)]="book.description" name="descriptions">
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field>
+            <input matInput placeholder="Gatunek" [(ngModel)]="book.typeId.name" name="typeId"
+                   readonly>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field>
+            <mat-label>Wybierz gatunek</mat-label>
+            <mat-select name="employeeRole" [(ngModel)]="book.typeId">
+              <mat-option *ngFor="let role of bookType" [value]="role">{{role.name}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field>
+            <input matInput placeholder="Autor" [(ngModel)]="book.authorId.surname" name="authorId"
+                   readonly>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field>
+            <mat-label>Wybierz autora</mat-label>
+            <mat-select name="employeeRole" [(ngModel)]="book.authorId">
+              <mat-option *ngFor="let role of bookAuthor" [value]="role">{{role.surname}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field>
+            <input matInput placeholder="Ocena" [(ngModel)]="book.ratingId.rating" name="ratingId"
+                   readonly>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field>
+            <mat-label>Wybierz ocenę</mat-label>
+            <mat-select name="employeeRole" [(ngModel)]="book.ratingId">
+              <mat-option *ngFor="let role of bookRating" [value]="role">{{role.rating}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div fxFlex="50" fxFlex.lt-sm="100">
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="Wybierz datę"
+                   [(ngModel)]="book.date" name="date">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+      </div>
+
+      <button type="submit" class="btn btn-success">Zapisz</button>
+
+    </form>
+  </mat-card>
+</div>

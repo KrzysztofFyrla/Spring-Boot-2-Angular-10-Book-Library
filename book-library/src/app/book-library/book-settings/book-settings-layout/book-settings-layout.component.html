@@ -1,0 +1,31 @@
+<div class="example-button-container">
+  <a mat-fab color="primary" routerLink=".." matTooltip="Wróć do poprzedniej strony">
+    <mat-icon>reply</mat-icon>
+  </a>
+</div>
+
+<div fxLayout="row wrap" class="matero-row">
+  <div class="matero-col" fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-sm="33.33" fxFlex.gt-md="25">
+    <mat-card>
+      <div class="text-center">
+        <img class="m-b-8 r-full" src="../../../../../../assets/images/books.jpg" alt="" width="200">
+        <h5 class="m-t-0 m-b-8 f-w-400">Spersonalizuj bibliotekę</h5>
+      </div>
+
+      <mat-nav-list class="m-x--16 m-b--16 m-t-16">
+        <mat-divider inset></mat-divider>
+        <a mat-list-item routerLink="type">
+          <mat-icon class="icon-18 m-r-8">book</mat-icon> Gatunki
+        </a>
+        <mat-divider inset></mat-divider>
+        <a mat-list-item routerLink="rating">
+          <mat-icon class="icon-18 m-r-8">looks_one</mat-icon> Oceny
+        </a>
+      </mat-nav-list>
+    </mat-card>
+  </div>
+
+  <div class="matero-col" fxFlex="100" fxFlex.gt-xs="50" fxFlex.gt-sm="66.67" fxFlex.gt-md="75">
+    <router-outlet></router-outlet>
+  </div>
+</div>
