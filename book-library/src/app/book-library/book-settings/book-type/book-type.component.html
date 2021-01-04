@@ -1,9 +1,9 @@
 <mat-card>
-  <mat-card-title>Gatunki</mat-card-title>
+  <mat-card-title>Types</mat-card-title>
 
   <section>
     <button color="primary" mat-fab (click)="openTypeDialog()" style="margin-bottom: 10px"
-            matTooltip="Dodaj gatunek">
+            matTooltip="Add type">
       <mat-icon>library_add</mat-icon>
     </button>
   </section>
@@ -17,7 +17,7 @@
       </ng-container>
 
       <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Tytuł</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Title</mat-header-cell>
         <mat-cell *matCellDef="let element" data-label="Nazwa"> {{element.name}} </mat-cell>
       </ng-container>
 

@@ -1,9 +1,9 @@
 <mat-card>
-  <mat-card-title>Oceny</mat-card-title>
+  <mat-card-title>Ratings</mat-card-title>
 
   <section>
     <button color="primary" mat-fab (click)="openRatingDialog()" style="margin-bottom: 10px"
-            matTooltip="Dodaj ocenę">
+            matTooltip="Add rating">
       <mat-icon>library_add</mat-icon>
     </button>
   </section>
@@ -17,12 +17,12 @@
       </ng-container>
 
       <ng-container matColumnDef="rating">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Ocena</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Rating</mat-header-cell>
         <mat-cell *matCellDef="let element" data-label="Tytuł"> {{element.rating}} </mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="dateRating">
-        <mat-header-cell *matHeaderCellDef mat-sort-header> Data</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> Date</mat-header-cell>
         <mat-cell *matCellDef="let element" data-label="Tytuł"> {{element.dateRating}} </mat-cell>
       </ng-container>
 

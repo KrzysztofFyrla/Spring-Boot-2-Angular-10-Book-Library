@@ -1,13 +1,13 @@
 <section>
   <button color="primary" mat-fab (click)="addLibrary()" style="margin-right: 10px"
-          matTooltip="Dodaj książkę">
+          matTooltip="Add book">
     <mat-icon>library_add</mat-icon>
   </button>
-  <button mat-fab (click)="settingsLibrary()" matTooltip="Ustawienia"
+  <button mat-fab (click)="settingsLibrary()" matTooltip="Settings"
           style="margin-right: 10px">
     <mat-icon>settings</mat-icon>
   </button>
-  <button mat-fab routerLink="books-view" matTooltip="Zmień widok"
+  <button mat-fab routerLink="books-view" matTooltip="Change view"
           style="margin-right: 10px">
     <mat-icon>view_module</mat-icon>
   </button>
@@ -28,27 +28,27 @@
     </ng-container>
 
     <ng-container matColumnDef="title">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Tytuł</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Title</mat-header-cell>
       <mat-cell *matCellDef="let element" data-label="Tytuł"> {{element.title}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="description">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Opis</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Description</mat-header-cell>
       <mat-cell *matCellDef="let element" data-label="Opis"> {{element.description}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="date">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Data premiery</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Release date</mat-header-cell>
       <mat-cell *matCellDef="let element" data-label="Data premiery"> {{element.date}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="typeId">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Gatunek</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Type</mat-header-cell>
       <mat-cell *matCellDef="let element" data-label="Gatunek"> {{element.typeId.name}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="authorId">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> Autor</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Author</mat-header-cell>
       <mat-cell *matCellDef="let element" data-label="Autor"> {{element.authorId.name}} </mat-cell>
     </ng-container>
 
